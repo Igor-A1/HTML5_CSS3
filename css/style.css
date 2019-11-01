@@ -6,7 +6,7 @@
 
 /* --- Only for design stage --- */
 /* h1, h2, h3, div, ul, ol, li, p, section, figure, figcaption, article, video, q { */
-  /* outline: 1px dotted blue; */
+    /* outline: 1px dotted blue; */
 /* } */
 
 body {
@@ -16,7 +16,7 @@ body {
 
 body {
     color: #333333;
-    font-family: "Arial MT", Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 22px;
@@ -24,7 +24,6 @@ body {
 
 #container {
     width: 1280px;
-    height: 3186px;
     margin: 0 auto;
     background-color: #f7f7f7;
 }
@@ -51,8 +50,15 @@ h3 {
     color: #445162;
 }
 
+.clearfix:after {
+    content: '';
+    clear: both;
+    display: table;
+}
+
 main,
-section {
+section,
+#contacts {
     position: relative;
     width: 100%;
     padding: 50px;
@@ -61,20 +67,26 @@ section {
 }
 
 section#header,
-section#contacts {
+#contacts {
     background-color: #445162;
     color: white;
 }
 
 section#pluses,
 section#reviews,
-footer {
+#copyright {
     background-color: #f5f5f5;
 }
 
 /* --- +++ --- */
-section#header {
-    height: 324px;
+h1,
+#header ul {
+    float: left;
+    width: 55%;
+}
+
+#product-img {
+    float: right;
 }
 
 #header ul {
@@ -93,47 +105,30 @@ section#header {
     margin-right: 8px;
 }
 
-.shape_9 {
-    position: absolute;
-    top: 50px;
-    right: 50px;
-    width: 470px;
-    height: 214px;
-    background-color: white;
-}
-
 /* --- +++ --- */
-main {
-    height: 354px;
+main h2,
+main p {
+    float: left;
+    max-width: 650px;
 }
 
 main h2 {
-    text-align: left;
+    margin-bottom: 10px;
+    text-align: right;
 }
 
 main p {
-    width: 650px;
-    margin-top: 30px;
-    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
-video {
-    position: absolute;
-    top: 50px;
-    right: 50px;
-    width: 430px;
-    height: 245px;
-    background-color: #445162;
+#video {
+    float: right;
 }
 
 /* --- +++ --- */
-section#pluses {
-    height: 418px;
-}
-
 #pluses ul {
     list-style-type: none;
-    margin-top: 36px;
+    margin-top: 10px;
 }
 
 .fa-plus-square {
@@ -143,8 +138,7 @@ section#pluses {
 
 #pluses ul li {
     width: 50%;
-    height: 66px;
-    margin-bottom: 30px;
+    margin-top: 30px;
     display: inline-block;
     float: left;
     overflow-y: hidden;
@@ -159,12 +153,11 @@ section#pluses {
     width: 532px;
 }
 /* --- +++ --- */
-section#screenshots {
-    height: 486px;
-}
-
 #screenshots ul {
     list-style-type: none;
+}
+
+#screenshots ul li {
     margin-top: 30px;
 }
 
@@ -172,39 +165,32 @@ section#screenshots {
     display: inline-block;
     float: left;
     width: 50%;
-    height: 150px;
-    margin-bottom: 30px;
     overflow-y: hidden;
 }
 
-#screenshots ul li figure img,
-#screenshots ul li figure figcaption {
+#screenshots ul li article * {
     display: inline-block;
     float: left;
 }
 
-#screenshots ul li figure figcaption {
+.screen-description {
     width: 358px;
     margin-left: 16px;
 }
 
-#screenshots ul li figure figcaption h3{
+.screen-description h3 {
     line-height: 0.75;
 }
 
-#screenshots ul li figure figcaption p {
+.screen-description p {
     margin-top: 16px;
     word-break: break-all;
 }
 
 /* --- +++ --- */
-section#reviews {
-    height: 424px;
-}
-
 #reviews ul {
     list-style-type: none;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 #reviews ul li {
@@ -212,7 +198,7 @@ section#reviews {
     float: left;
     width: 574px;
     height: 120px;
-    margin-bottom: 24px;
+    margin-top: 20px;
 }
 
 #reviews ul li:nth-child(even) {
@@ -227,6 +213,7 @@ section#reviews {
 
 #reviews ul li img {
     border-radius: 50%;
+    box-shadow: 0 0 0 1px #ccc;
 }
 
 #reviews ul li article {
@@ -263,7 +250,6 @@ section#reviews {
 
 /* --- +++ --- */
 section#buy_it {
-    height: 656px;
     text-align: center;
 }
 
@@ -359,11 +345,11 @@ section#buy_it > ul > li:last-child {
 }
 
 /* --- +++ --- */
-section#contacts {
+#contacts {
     height: 508px;
 }
 
-section#contacts h2 {
+#contacts h2 {
     color: white;
 }
 
@@ -510,7 +496,7 @@ address {
 }
 
 /* --- +++ --- */
-#copyright {
+#copyright p {
     text-align: center;
     font-size: 12px;
     font-weight: 400;

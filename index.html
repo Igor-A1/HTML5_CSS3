@@ -8,21 +8,21 @@
   <link rel="stylesheet" href="./css/style.css"> </head>
 <body>
   <div id="container">
-    <section id="header">
+    <section id="header" class="clearfix">
       <h1>Product name</h1>
+      <img id="product-img" src="https://picsum.photos/id/1080/470/214" alt="here is your product image">
       <ul>
         <li><i class="fa fa-check fa-lg"></i>Put on&nbsp;this page information about your product</li>
         <li><i class="fa fa-check fa-lg"></i>A&nbsp;detailed description of&nbsp;your product</li>
         <li><i class="fa fa-check fa-lg"></i>Tell&nbsp;us about the advantages and merits</li>
         <li><i class="fa fa-check fa-lg"></i>Associate the page with the payment system</li>
       </ul>
-      <div class="shape_9"></div>
     </section>
-    <main id="about">
+    <main id="about" class="clearfix">
       <h2>About your product</h2>
+      <img id="video" src="./img/video-placeholder.jpg" alt="here is video :: coming soon" title="here is video :: coming soon">
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis facilis fuga, illo&nbsp;at. Natus eos, eligendi illum rerum omnis porro&nbsp;ex, magni, explicabo veniam incidunt in&nbsp;quam sapiente ut&nbsp;ipsum.</p>
       <p>Pariatur iure ab&nbsp;sunt nesciunt, quibusdam odio iste cumque itaque, ipsa vel exercitationem ullam quos aut nostrum cupiditate fuga quaerat quam animi dolores. Sequi itaque, unde perferendis nemo debitis dolor.</p>
-      <video></video>
     </main>
     <section id="pluses">
       <h2>Dignity and pluses product</h2>
@@ -53,48 +53,48 @@
         </li>
       </ul>
     </section>
-    <section id="screenshots">
+    <section id="screenshots" class="clearfix">
       <h2>Screenshots</h2>
       <ul>
         <li>
-          <figure>
+          <article>
             <img src="./img/screenshot.jpg" alt="screenshot.jpg">
-            <figcaption>
+            <div class="screen-description">
               <h3>The description for the image</h3>
               <p>Pariatur iure ab&nbsp;sunt nesciunt, quibusdam odio iste cumque itaque, ipsa vel exercitationem ullam quos aut nostrum cupiditate fuga quaerat quam animi dolores. Sequi itaque, unde perferendis nemo debitis dolor.</p>
-            </figcaption>
-          </figure>
+            </div>
+          </article>
         </li>
         <li>
-          <figure>
+          <article>
             <img src="./img/screenshot.jpg" alt="screenshot.jpg">
-            <figcaption>
+            <div class="screen-description">
               <h3>The description for the image</h3>
               <p>Pariatur iure ab&nbsp;sunt nesciunt, quibusdam odio iste cumque itaque, ipsa vel exercitationem ullam quos aut nostrum cupiditate fuga quaerat quam animi dolores. Sequi itaque, unde perferendis nemo debitis dolor.</p>
-            </figcaption>
-          </figure>
+            </div>
+          </article>
         </li>
         <li>
-          <figure>
+          <article>
             <img src="./img/screenshot.jpg" alt="screenshot.jpg">
-            <figcaption>
+            <div class="screen-description">
               <h3>The description for the image</h3>
               <p>Pariatur iure ab&nbsp;sunt nesciunt, quibusdam odio iste cumque itaque, ipsa vel exercitationem ullam quos aut nostrum cupiditate fuga quaerat quam animi dolores. Sequi itaque, unde perferendis nemo debitis dolor.</p>
-            </figcaption>
-          </figure>
+            </div>
+          </article>
         </li>
         <li>
-          <figure>
+          <article>
             <img src="./img/screenshot.jpg" alt="screenshot.jpg">
-            <figcaption>
+            <div class="screen-description">
               <h3>The description for the image</h3>
               <p>Pariatur iure ab&nbsp;sunt nesciunt, quibusdam odio iste cumque itaque, ipsa vel exercitationem ullam quos aut nostrum cupiditate fuga quaerat quam animi dolores. Sequi itaque, unde perferendis nemo debitis dolor.</p>
-            </figcaption>
-          </figure>
+            </div>
+          </article>
         </li>
       </ul>
     </section>
-    <section id="reviews">
+    <section id="reviews" class="clearfix">
       <h2>Reviews</h2>
       <ul>
         <li>
@@ -127,12 +127,12 @@
         </li>
       </ul>
     </section>
-    <section id="buy_it">
+    <section id="buy_it" class="clearfix">
       <h2>Buy it&nbsp;now</h2>
       <ul>
         <li>
-          <figure class="product" id="standard">
-            <figcaption class="title">Standard</figcaption>
+          <div class="product" id="standard">
+            <p class="title">Standard</p>
             <p class="price">$100</p>
             <ol class="props">
               <li>Porro officia cumque sint deleniti;</li>
@@ -141,11 +141,11 @@
               <li>Aperiam nulla ea&nbsp;neque.</li>
             </ol>
             <a href="#" class="btn-buy">BUY</a>
-          </figure>
+          </div>
         </li>
         <li>
-          <figure class="product" id="premium">
-            <figcaption class="title">Premium</figcaption>
+          <div class="product" id="premium">
+            <p class="title">Premium</p>
             <p class="price">$150</p>
             <ol class="props">
               <li>Porro officia cumque sint deleniti;</li>
@@ -158,11 +158,11 @@
               <li>Aperiam nulla ea&nbsp;neque.</li>
             </ol>
             <a href="#" class="btn-buy">BUY</a>
-          </figure>
+          </div>
         </li>
         <li>
-          <figure class="product" id="luxury">
-            <figcaption class="title">Luxury</figcaption>
+          <div class="product" id="luxury">
+            <p class="title">Luxury</p>
             <p class="price">$200</p>
             <ol class="props">
               <li>Porro officia cumque sint deleniti;</li>
@@ -179,38 +179,40 @@
               <li>Aperiam nulla ea&nbsp;neque.</li>
             </ol>
             <a href="#" class="btn-buy">BUY</a>
-          </figure>
+          </div>
         </li>
       </ul>
     </section>
-    <section id="contacts">
-      <h2>Contacts</h2>
-      <form id="feedback" action="#">
-        <input id="u_name" class="mail-attr" type="text" placeholder="Your name:">
-        <input id="u_email" class="mail-attr" type="email" placeholder="Your email:">
-        <textarea id="u_msg" placeholder="Your message:"></textarea>
-        <input id="btn-send" type="submit" value="Send">
-      </form>
-      <address>
-        <ul id="contact-list">
-          <li id="skype"><i class="fa fa-skype fa-lg"></i>here_your_login_skype</li>
-          <li id="email"><i class="fa fa-at fa-lg"></i><a href="mailto:psdhtmlcss@mail.ru">psdhtmlcss@mail.ru</a></li>
-          <li id="phone"><i class="fa fa-phone fa-lg"></i>80 00 4568 55 55</li>
-          <li>
-            <ul id="social-links">
-              <li id="twitter"><a href="https://twitter.com"><i class="fa fa-twitter fa-lg"></i></a></li>
-              <li id="facebook"><a href="https://facebook.com"><i class="fa fa-facebook fa-lg"></i></a></li>
-              <li id="linkedin"><a href="https://linkedin.com"><i class="fa fa-linkedin fa-lg"></i></a></li>
-              <li id="youtube"><a href="https://youtube.com"><i class="fa fa-youtube fa-lg"></i></a></li>
-              <li id="telegram"><a href="https://telegram.com"><i class="fa fa-telegram fa-lg"></i></a></li>
-              <li id="vk"><a href="https://vk.com"><i class="fa fa-vk fa-lg"></i></a></li>
-            </ul>
-          </li>
-        </ul>
-      </address>
-    </section>
     <footer>
-      <p id="copyright">Copyright &copy;&nbsp;2014 Product name &middot; PSD HTML&nbsp;CSS</p>
+      <div id="contacts" class="clearfix">
+        <h2>Contacts</h2>
+        <form id="feedback" action="#">
+          <input id="u_name" class="mail-attr" type="text" placeholder="Your name:">
+          <input id="u_email" class="mail-attr" type="email" placeholder="Your email:">
+          <textarea id="u_msg" placeholder="Your message:"></textarea>
+          <input id="btn-send" type="submit" value="Send">
+        </form>
+        <address>
+          <ul id="contact-list">
+            <li id="skype"><i class="fa fa-skype fa-lg"></i>here_your_login_skype</li>
+            <li id="email"><i class="fa fa-at fa-lg"></i><a href="mailto:psdhtmlcss@mail.ru">psdhtmlcss@mail.ru</a></li>
+            <li id="phone"><i class="fa fa-phone fa-lg"></i>80 00 4568 55 55</li>
+            <li>
+              <ul id="social-links">
+                <li id="twitter"><a href="https://twitter.com"><i class="fa fa-twitter fa-lg"></i></a></li>
+                <li id="facebook"><a href="https://facebook.com"><i class="fa fa-facebook fa-lg"></i></a></li>
+                <li id="linkedin"><a href="https://linkedin.com"><i class="fa fa-linkedin fa-lg"></i></a></li>
+                <li id="youtube"><a href="https://youtube.com"><i class="fa fa-youtube fa-lg"></i></a></li>
+                <li id="telegram"><a href="https://telegram.com"><i class="fa fa-telegram fa-lg"></i></a></li>
+                <li id="vk"><a href="https://vk.com"><i class="fa fa-vk fa-lg"></i></a></li>
+              </ul>
+            </li>
+          </ul>
+        </address>
+      </div>
+      <div id="copyright">
+        <p>Copyright &copy;&nbsp;2014 Product name &middot; PSD HTML&nbsp;CSS</p>
+      </div>
     </footer>
   </div>
 </body>
