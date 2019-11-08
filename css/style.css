@@ -8,11 +8,16 @@
 /* h1, h2, h3, div, ul, ol, li, p, section, figure, figcaption, article, video, q { */
     /* outline: 1px dotted blue; */
 /* } */
+/* --- +++ --- */
+
+html,
+body {
+    min-height: 100%;
+}
 
 body {
     background-color: #aaa;
 }
-/* --- +++ --- */
 
 body {
     color: #333333;
@@ -22,10 +27,22 @@ body {
     line-height: 22px;
 }
 
-#container {
-    width: 1280px;
+.container {
     margin: 0 auto;
-    background-color: #f7f7f7;
+}
+
+@media all and (min-width: 0) and (max-width: 767px) {
+    .container {
+        padding: 0;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
 }
 
 h1 {
@@ -33,6 +50,12 @@ h1 {
     font-size: 60px;
     font-weight: 400;
     line-height: 48px;
+}
+
+@media (max-width: 479px) {
+    h1 {
+      font-size: 46px;
+    }
 }
 
 h2 {
@@ -53,7 +76,7 @@ h3 {
 .clearfix:after {
     content: '';
     clear: both;
-    display: table;
+    display: block;
 }
 
 main,
@@ -64,6 +87,14 @@ section,
     padding: 50px;
     background-color: white;
     overflow: hidden;
+}
+
+@media all and (min-width: 0) and (max-width: 767px) {
+    main,
+    section,
+    #contacts {
+        padding: 16px;
+    }
 }
 
 section#header,
@@ -79,19 +110,13 @@ section#reviews,
 }
 
 /* --- +++ --- */
-h1,
-#header ul {
-    float: left;
-    width: 55%;
-}
-
 #product-img {
-    float: right;
+    width: 100%;
 }
 
 #header ul {
     list-style-type: none;
-    margin-top: 50px;
+    margin-top: 16px;
 }
 
 #header ul li {
@@ -106,23 +131,18 @@ h1,
 }
 
 /* --- +++ --- */
-main h2,
-main p {
-    float: left;
-    max-width: 650px;
-}
-
 main h2 {
-    margin-bottom: 10px;
-    text-align: right;
+    margin-bottom: 30px;
 }
 
 main p {
-    margin-top: 20px;
+    margin-top: 16px;
+    margin-bottom: 16px;
 }
 
-#video {
-    float: right;
+#videotest {
+    width: 100%;
+    object-fit: fill;
 }
 
 /* --- +++ --- */
@@ -137,8 +157,7 @@ main p {
 }
 
 #pluses ul li {
-    width: 50%;
-    margin-top: 30px;
+    margin-top: 16px;
     display: inline-block;
     float: left;
     overflow-y: hidden;
@@ -150,55 +169,65 @@ main p {
 }
 #pluses ul li p {
     margin-left: 10px;
-    width: 532px;
+    margin-bottom: 0;
+    width: calc(100% - 38px); /* plus:28px + margin:10px */
 }
 /* --- +++ --- */
 #screenshots ul {
     list-style-type: none;
+    margin-top: 10px;
+    margin-bottom: 0;
 }
 
 #screenshots ul li {
-    margin-top: 30px;
-}
-
-#screenshots ul li {
+    margin-top: 16px;
     display: inline-block;
     float: left;
-    width: 50%;
-    overflow-y: hidden;
 }
 
-#screenshots ul li article * {
-    display: inline-block;
+#screenshots ul li article img {
     float: left;
+    margin-right: 16px;
+}
+
+#screenshots ul li article img:hover {
+    -webkit-filter: hue-rotate(90deg);
+    filter: hue-rotate(90deg);
 }
 
 .screen-description {
-    width: 358px;
-    margin-left: 16px;
-}
-
-.screen-description h3 {
-    line-height: 0.75;
+    width: 100%;
 }
 
 .screen-description p {
     margin-top: 16px;
+    margin-bottom: 0;
     word-break: break-all;
+}
+
+@media (max-width: 479px) {
+    #screenshots ul li article img {
+        float: none;
+        margin-left: calc(50% - 100px);
+        margin-bottom: 16px;
+   }
+    
+    .screen-description h3 {
+        text-align: center;
+    }
 }
 
 /* --- +++ --- */
 #reviews ul {
     list-style-type: none;
     margin-top: 10px;
+    margin-bottom: 0;
 }
 
 #reviews ul li {
     display: inline-block;
     float: left;
-    width: 574px;
-    height: 120px;
-    margin-top: 20px;
+    margin-top: 16px;
 }
 
 #reviews ul li:nth-child(even) {
@@ -214,16 +243,34 @@ main p {
 #reviews ul li img {
     border-radius: 50%;
     box-shadow: 0 0 0 1px #ccc;
+    -webkit-filter: sepia(0.2);
+    filter: sepia(0.2);
+}
+
+#reviews ul li img:hover {
+    -webkit-filter: none;
+    filter: none;
+    box-shadow: 0 0 0 2px #bbb;
 }
 
 #reviews ul li article {
-    background-image: url(../img/review-bg.png);
-    margin-left: 16px;
-    width: 483px;
-    height: 100%;
-    padding: 16px 16px 16px 28px;
-    background-position: right;
-    background-repeat: no-repeat;
+    position: relative;
+    margin-left: 24px;
+    width: calc(100% - 100px);
+    padding: 16px;
+    background-color: #ebebeb;
+    border-radius: 8px;
+}
+
+#reviews ul li article::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: -10px;
+    top: 30px;
+    background: #ebebeb;
+    transform: rotate(45deg);
 }
 
 .review,
@@ -238,7 +285,6 @@ main p {
     display: inline-block;
     quotes: none;
     font-style: italic;
-    max-height: 64px;
     word-break: break-all;
 }
 
@@ -249,24 +295,60 @@ main p {
 }
 
 /* --- +++ --- */
+@media all and (min-width: 0) and (max-width: 767px) {
+    section#buy_it {
+        padding: 15px;
+    }
+}
+
 section#buy_it {
     text-align: center;
 }
 
 section#buy_it > ul {
     list-style-type: none;
-    margin: 0 94px 50px;
+    margin-top: 16px;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+}
+@media (max-width: 1200px) {
+    section#buy_it {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
 }
 
-section#buy_it > ul > li {
-    display: inline-block;
-    float: left;
-    width: 300px;
-    margin-right: 45px;
+@media (min-width: 992px) {
+    section#buy_it  ul {
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: flex-end;
+    }
 }
 
 section#buy_it > ul > li:last-child {
     margin-right: 0;
+}
+
+@media all and (min-width: 0) and (max-width: 991px) {
+    section#buy_it > ul > li {
+        margin: 0 35px 32px;
+    }
+    
+    section#buy_it > ul > li:last-child {
+        margin: 0 35px 0;
+    }
+}
+
+@media all and (min-width: 0) and (max-width: 767px) {
+    section#buy_it > ul > li {
+        margin: 0 0 16px;
+    }
+    
+    section#buy_it > ul > li:last-child {
+        margin: 0;
+    }
 }
 
 .product {
@@ -275,24 +357,9 @@ section#buy_it > ul > li:last-child {
     color: white;
 }
 
-/* buy_it:656 - padding-top:50 - padding-bottom:50 - title:24 = 532 */
-.product#standard {
-    margin-top: 226px;
-    height: 306px;
-}
-
-.product#premium {
-    margin-top: 128px;
-    height: 404px;
-}
-
-.product#luxury {
-    margin-top: 33px;
-    height: 499px;
-}
-
 .product .title {
-    padding: 12px 0;
+    margin: 0;
+    padding: 16px 0;
     font-size: 24px;
     font-weight: 400;
     line-height: 28px;
@@ -310,7 +377,7 @@ section#buy_it > ul > li:last-child {
 }
 
 .product ol.props {
-    margin: 16px 20px;
+    margin: 16px;
     list-style-position: inside;
     text-align: left;
 }
@@ -323,9 +390,9 @@ section#buy_it > ul > li:last-child {
 
 .btn-buy {
     display: inline-block;
-    margin-top: 4px;
+    margin: 0 16px 16px;
     padding-top: 12px;
-    width: 260px;
+    width: calc(100% - 32px);
     height: 40px;
     border-radius: 8px;
     font-size: 18px;
@@ -345,10 +412,6 @@ section#buy_it > ul > li:last-child {
 }
 
 /* --- +++ --- */
-#contacts {
-    height: 508px;
-}
-
 #contacts h2 {
     color: white;
 }
@@ -357,13 +420,12 @@ section#buy_it > ul > li:last-child {
     display: inline-block;
     float: left;
     margin-top: 30px;
-    margin-left: 250px;
-    width: 500px;
     text-align: center;
 }
 
 #u_name,
 #u_email,
+#u_tel,
 #u_msg {
     margin-bottom: 20px;
     width: 100%;
@@ -383,29 +445,29 @@ section#buy_it > ul > li:last-child {
 #u_msg {
     height: 170px;
     resize: none;
-    font-family: "Arial MT", Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #u_msg::-webkit-input-placeholder {
-    font-family: "Arial MT", Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
 }
 #u_msg::-moz-placeholder {
-    font-family: "Arial MT", Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
 }
 #u_msg:-moz-placeholder {
-    font-family: "Arial MT", Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
 }
 #u_msg:-ms-input-placeholder {
-    font-family: "Arial MT", Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 24px;
@@ -437,8 +499,8 @@ address {
 #contact-list {
     display: inline-block;
     float: left;
-    margin-top: 28px;
-    margin-left: 45px;
+    margin-top: 30px;
+    margin-bottom: 0;
     list-style-type: none;
     color: white;
     font-size: 16px;
@@ -447,14 +509,46 @@ address {
 }
 
 #contact-list li {
-    margin-bottom: 16px;
     vertical-align: middle;
+}
+
+#contact-list > li:not(:last-child) {
+    margin-bottom: 16px;
 }
 
 #contact-list > li > i {
     margin-right: 10px;
 }
 
+@media all and (min-width: 0) and (max-width: 991px) {
+    #contacts {
+        padding: 16px 50px;
+    }
+    
+    #contact-list {
+        margin-top: 16px;
+        margin-bottom: 34px;
+    }
+}
+
+@media all and (min-width: 0) and (max-width: 767px) {
+    #contacts {
+        padding: 16px;
+    }
+    
+    #feedback {
+        margin-top: 16px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    
+    #contact-list {
+        margin-left: 16px;
+        margin-top: 16px;
+        margin-bottom: 0;
+    }
+}
+ 
 #email a {
     color: white;
     text-decoration: none;
@@ -465,13 +559,13 @@ address {
 }
 
 #social-links {
-    margin-top: 6px;
+    /* margin-top: 6px; */
     list-style-type: none;
 }
 
 #social-links li {
     display: inline-block;
-    margin-top: 16px;
+    /* margin-top: 16px; */
     margin-right: 6px;
     padding-top: 6px;
     background-color: white;
@@ -497,6 +591,7 @@ address {
 
 /* --- +++ --- */
 #copyright p {
+  margin-bottom: 0;
     text-align: center;
     font-size: 12px;
     font-weight: 400;
