@@ -1,0 +1,20 @@
+.row-head {
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    &_h85 {
+        height: 85px;
+    }
+    &_h70 {
+        height: 70px;
+    }
+    &_h50 {
+        height: 50px;
+    }
+    &_align-center {
+        align-items: center;
+    }
+}

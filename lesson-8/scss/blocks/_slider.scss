@@ -1,0 +1,49 @@
+.slider {
+    padding: 30px;
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #e6e6e6;
+}
+  
+.carousel-inner-frame {
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 0 1px #e6e6e6;
+}
+
+.carousel-indicators_bottom{
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+  
+#slyder-pager li {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    background-color: #333;
+    align-self: center;
+    font-size: 14px;
+    color: #f2f2f2;
+    text-indent: inherit;
+    opacity: 1;
+    
+    &.active {
+      background-color: #f2f2f2;
+      color: #333;
+    }
+
+    &:first-child i {
+      padding-left: 3px;
+    }
+
+    &:last-child i {
+      padding-left: 6px;
+    }
+
+    &:first-child,
+    &:last-child {
+      width: 20px;
+      height: 20px;
+    }
+}
