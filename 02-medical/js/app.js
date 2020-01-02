@@ -1,18 +1,4 @@
-const log = console.log;
-log('---> starting...');
-
 jQuery(document).ready(function() {
-  
-    $(function() {
-      $('.flip-horizontal').flip({
-        trigger: 'hover'
-      });
-      $('.flip-vertical').flip({
-        axis: 'x',
-        reverse: true,
-        trigger: 'hover'
-      });
-    });
     
     jQuery('#banner').addClass("hidden").viewportChecker({
         classToAdd: 'visible animated fadeIn',
@@ -60,5 +46,3 @@ jQuery(document).ready(function() {
     });
 
 });
-
-log('<--- done.');

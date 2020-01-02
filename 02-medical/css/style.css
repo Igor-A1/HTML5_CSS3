@@ -5,7 +5,90 @@
 }
 
 /* --- Only for design stage --- */
-/* header, main, footer, section, article, h1, h2, h3, div, ul, ol, li, p {outline: 1px dotted blue;} */
+/* blocks elements and containers */
+address,
+article,
+aside,
+blockquote,
+dd,
+div,
+dl,
+dt,
+details,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1, h2, h3, h4, h5, h6,
+header,
+hr,
+li,
+legend,
+nav,
+noscript,
+ol,
+output,
+optgroup,
+option,
+p,
+pre,
+section,
+summary,
+table,
+ul {
+  outline: 1px dotted blue;
+}
+
+/* inline elements and containers */
+a,
+area,
+b,
+bdo,
+bdi,
+cite,
+code,
+dfn,
+del,
+em,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+map,
+mark,
+s,
+samp,
+small,
+span,
+strong,
+sub,
+sup,
+time,
+q,
+ruby,
+u,
+var {
+  outline: 1px dotted green;
+}
+
+/* inline-blocks elements and containers */
+audio,
+button,
+canvas,
+embed,
+input,
+keygen,
+meter,
+object,
+progress,
+select,
+textarea,
+video {
+  outline: 1px dotted red;
+}
 /* --- +++ --- */
 
 html,
@@ -877,9 +960,8 @@ header hr {
 
 .gallery-list .back {
     display: inline-block;
-    min-height: 220px;
-    background-color: rgba(80, 80, 80, 0.2);
-    padding: 16px;
+    padding: 8px;
+    background-color: skyblue;
     color: white;
     text-align: center;
     vertical-align: middle;
@@ -887,11 +969,65 @@ header hr {
 
 .gallery-list .back  h3 {
     color: #D81B60;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
 }
 
 .gallery-list * {
     width: 100%;
+}
+
+.flip-horizontal,
+.flip-vertical {
+    position: relative;
+    perspective: 1000px;
+}
+
+.flip-horizontal .back,
+.flip-vertical .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+}
+
+.flip-horizontal img {
+    transform: rotateY(0deg);
+    transition-duration: 1s;
+}
+
+.flip-horizontal .back {
+    transform: rotateY(90deg);
+    transition-duration: 1s;
+}
+
+.flip-vertical img {
+    transform: rotateX(0deg);
+    transition-duration: 1s;
+}
+
+.flip-vertical .back {
+    transform: rotateX(90deg);
+    transition-duration: 1s;
+}
+
+.flip-horizontal:hover img {
+    transform: rotateY(90deg);
+    transition-duration: 1s;
+}
+
+.flip-horizontal:hover .back {
+    transform: rotateY(0deg);
+    transition-duration: 1s;
+}
+
+.flip-vertical:hover img {
+    transform: rotateX(90deg);
+    transition-duration: 1s;
+}
+
+.flip-vertical:hover .back {
+    transform: rotateX(0deg);
+    transition-duration: 1s;
 }
 
 /* --- +++ --- */
@@ -1347,14 +1483,11 @@ div#feat-icon-4:hover {
 }
 
 .works-1 img:hover {
-  animation-name: flip;
-  animation-delay: 500ms;
-
+  animation-name: rotateIn;
 }
 
 .works-2 img:hover {
-  animation-name: flipOutX;
-  animation-delay: 200ms;
+  animation-name: rotateIn;
 }
 
 .offer:hover {

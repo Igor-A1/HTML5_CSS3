@@ -1,0 +1,20 @@
+.main-menu {
+    color: white;
+    font-size: 13px;
+    font-weight: 400;
+    
+    & a:hover {
+        transition: 300ms;
+        color: black;
+    }
+    
+    & ul {
+        margin: 0;
+    
+      & li:not(:last-child) {
+          margin-right: 16px;
+      }
+      
+    }
+    
+}

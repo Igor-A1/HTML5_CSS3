@@ -1,0 +1,35 @@
+.social {
+    background-color: $green_color;
+    padding: 8px 8px 0;
+    width: max-content;
+    height: 48px;
+
+    &_top-right {
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        margin-bottom: 8px;
+    }
+    
+    & ul li {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background-color: $bg_color;
+        color: white;
+        text-align: center;
+        padding-top: 4px;
+        font-size: 16px;
+
+      &:not(:last-child) {
+          margin-right: 8px;
+      }
+
+      &:hover,
+      & a:hover {
+          transition: 300ms;
+          background-color: $blue_color;
+          color: white;
+          cursor: pointer;
+      } 
+    }
+}
